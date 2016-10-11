@@ -41,6 +41,49 @@ router.get('/', function(req, res) {
 });
 
 // more routes for our API will happen here
+
+// count up/down coffee counter
+router.route('/users/:user_id/countUpCoffee')
+  .post(function(req, res) {
+    User.findById(req.params.user_id, function(err, user) {
+      if(err) {
+        res.send(err);
+      }
+
+      // increase counter
+      user.coffeeCounter = user.coffeeCounter + 1;
+
+      // save the user
+      user.save(function(err) {
+        if(err) {
+            res.send(err);
+        }
+        res.json(user.toObject({ getters: true }));
+      });
+    });
+  });
+
+router.route('/users/:user_id/countUpCoffee')
+  .post(function(req, res) {
+    User.findById(req.params.user_id, function(err, user) {
+      if(err) {
+        res.send(err);
+      }
+
+      // increase counter
+      user.coffeeCounter = user.coffeeCounter - 1;
+
+      // save the user
+      user.save(function(err) {
+        if(err) {
+            res.send(err);
+        }
+        res.json(user.toObject({ getters: true }));
+      });
+    });
+  });
+
+// REST API calls
 router.route('/users')
 
   // create a user (accessed at POST http://localhost:8080/api/v1/users)
@@ -48,7 +91,7 @@ router.route('/users')
     var user = new User();
     user.lastname = req.body.lastname;
     user.firstname = req.body.firstname;
-    user.coffeeCounter = req.body.coffeeCounter;
+    //user.coffeeCounter = req.body.coffeeCounter;
 
     user.save(function(err) {
         if (err) {
@@ -88,7 +131,7 @@ router.route('/users/:user_id')
 
       user.lastname = req.body.lastname;
       user.firstname = req.body.firstname;
-      user.coffeeCounter = req.body.coffeeCounter;
+      //user.coffeeCounter = req.body.coffeeCounter;
 
       // save the user
       user.save(function(err) {
