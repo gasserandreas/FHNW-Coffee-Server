@@ -32,8 +32,6 @@ const router = express.Router();              // get an instance of the express 
 
 // middleware to use for all requests
 router.use(function(req, res, next) {
-    // do logging
-    console.log('Something is happening');
     next();
 });
 
@@ -44,20 +42,62 @@ router.get('/', function(req, res) {
 
 // more routes for our API will happen here
 
+// count up/down coffee counter
+router.route('/users/:user_id/countUpCoffee')
+  .post(function(req, res) {
+    User.findById(req.params.user_id, function(err, user) {
+      if(err) {
+        res.send(err);
+      }
+
+      // increase counter
+      user.coffeeCounter = user.coffeeCounter + 1;
+
+      // save the user
+      user.save(function(err) {
+        if(err) {
+            res.send(err);
+        }
+        res.json(user.toObject({ getters: true }));
+      });
+    });
+  });
+
+router.route('/users/:user_id/countUpCoffee')
+  .post(function(req, res) {
+    User.findById(req.params.user_id, function(err, user) {
+      if(err) {
+        res.send(err);
+      }
+
+      // increase counter
+      user.coffeeCounter = user.coffeeCounter - 1;
+
+      // save the user
+      user.save(function(err) {
+        if(err) {
+            res.send(err);
+        }
+        res.json(user.toObject({ getters: true }));
+      });
+    });
+  });
+
+// REST API calls
 router.route('/users')
 
   // create a user (accessed at POST http://localhost:8080/api/v1/users)
   .post(function(req, res) {
     var user = new User();
-    user.surname = req.body.surname;
+    user.lastname = req.body.lastname;
     user.firstname = req.body.firstname;
-    user.coffeeCounter = req.body.coffeeCounter;
+    //user.coffeeCounter = req.body.coffeeCounter;
 
     user.save(function(err) {
         if (err) {
             res.send(err);
         }
-        res.json(user);
+        res.json(user.toObject({ getters: true }));
     });
   })
 
@@ -67,7 +107,8 @@ router.route('/users')
       if (err) {
         res.send(err);
       }
-      res.json(users);
+      const objs = users.map(user => user.toObject({ getters: true }));
+      res.json(objs);
     });
   });
 
@@ -78,7 +119,7 @@ router.route('/users/:user_id')
       if(err) {
         res.send(err);
       }
-      res.json(user);
+      res.json(user.toObject({ getters: true }));
     });
   })
 
@@ -88,16 +129,16 @@ router.route('/users/:user_id')
         res.send(err);
       }
 
-      user.surname = req.body.surname;
+      user.lastname = req.body.lastname;
       user.firstname = req.body.firstname;
-      user.coffeeCounter = req.body.coffeeCounter;
+      //user.coffeeCounter = req.body.coffeeCounter;
 
       // save the user
       user.save(function(err) {
         if(err) {
             res.send(err);
         }
-        res.json(user);
+        res.json(user.toObject({ getters: true }));
       });
     });
   })
