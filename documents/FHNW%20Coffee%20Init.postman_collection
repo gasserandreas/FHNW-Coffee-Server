@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FHNW Coffee Init",
+		"_postman_id": "c5a1f9ce-7258-2bc5-862e-0cd56cac12d3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3001/api/v1/users - Andreas Gasser",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Andreas\",\n    \"lastname\": \"Gasser\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users - Heimo Paffhausen",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Heimo\",\n    \"lastname\": \"Paffhausen\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users -Matthias Langhard",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Matthias\",\n    \"lastname\": \"Langhard\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users - Remo Koch",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Remo\",\n    \"lastname\": \"Koch\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users - Lukas Klier",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Lukas\",\n    \"lastname\": \"Klier\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
