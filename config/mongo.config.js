@@ -1,6 +1,6 @@
 module.exports = {
     'secret': 'ilovescotchyscotch',
-    'database': 'mongodb://localhost:3030/simple-api',
+    'database': 'mongodb://localhost:3030/fhnw-coffee',
 };
 
 // connect to mongodb

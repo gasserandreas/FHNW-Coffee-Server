@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+//var pause = require('connect-pause');
+
 const jwtConfig = require('./config/jwt.config');
 const mongoConfig = require('./config/mongo.config');
 const User = require('./app/models/user');
@@ -11,6 +13,7 @@ const User = require('./app/models/user');
 const app = express();
 
 app.use(cors());
+//app.use(pause(1000)); // DEBUG
 
 // Authentication middleware provided by express-jwt.
 // This middleware will check incoming requests for a valid
@@ -89,6 +92,7 @@ router.route('/users')
   // create a user (accessed at POST http://localhost:8080/api/v1/users)
   .post(function(req, res) {
     var user = new User();
+    user.coffeeCounter = 0;
     user.lastname = req.body.lastname;
     user.firstname = req.body.firstname;
     //user.coffeeCounter = req.body.coffeeCounter;
