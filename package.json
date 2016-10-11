@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "db": "mongod --dbpath /usr/local/var/mongodb --port 3030"
+    "db": "mongod --dbpath /usr/local/var/mongodb --port 3030",
+    "push:prod": "git push prod  feature/#4/dokku-deployment:master"
   },
   "author": "Auth0",
   "license": "MIT",
