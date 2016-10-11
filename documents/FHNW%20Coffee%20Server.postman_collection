@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FHNW Coffee Server",
+		"_postman_id": "85be2032-9aad-6e27-3f29-ba920904f500",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3001/api/v1/users",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users",
+			"request": {
+				"url": "localhost:3001/api/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\": \"Andreas 3\",\n\t\"lastname\": \"Gasser 3\",\n\t\"coffeeCounter\": 0\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users/57fc01dc400280569d2c7aad",
+			"request": {
+				"url": "localhost:3001/api/v1/users/57fce9b4bd6a10621fa153dc",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users/57fc0230400280569d2c7aaf",
+			"request": {
+				"url": "localhost:3001/api/v1/users/57fce9bdbd6a10621fa153de",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"coffeeCounter\": 0,\n    \"firstname\": \"Andreas 3\",\n    \"lastname\": \"Gasser 3\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/api/v1/users/57fce9b4bd6a10621fa153dc/countUpCoffee",
+			"request": {
+				"url": "localhost:3001/api/v1/users/57fce9b4bd6a10621fa153dc/countUpCoffee",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
