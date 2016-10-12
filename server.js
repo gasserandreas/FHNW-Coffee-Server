@@ -21,13 +21,14 @@ app.use(cors());
 const authCheck = jwt(jwtConfig);
 
 mongoose.connect(process.env.MONGO_URL || mongoConfig.database);
+//mongoose.connect(process.env.MONGO_URL);
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 3001;        // set our port
+const port = process.env.PORT || 80;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
