@@ -20,7 +20,7 @@ app.use(cors());
 // JWT on any routes that it is applied to.
 const authCheck = jwt(jwtConfig);
 
-mongoose.connect(process.env.MONGO_URL || mongoConfig.database);
+//mongoose.connect(process.env.MONGO_URL || mongoConfig.database);
 //mongoose.connect(process.env.MONGO_URL);
 
 // configure app to use bodyParser()
@@ -43,7 +43,7 @@ router.use(function(req, res, next) {
 router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
-
+/*
 // more routes for our API will happen here
 
 // count up/down coffee counter
