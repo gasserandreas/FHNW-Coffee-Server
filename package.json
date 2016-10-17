@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "PORT='3001' MONGO_URL='mongodb://localhost:3030/fhnw-coffee' node server.js",
+    "db": "mongod --dbpath /usr/local/var/mongodb --port 3030",
+    "push:prod": "git push prod  feature/#4/dokku-deployment:master"
   },
   "author": "",
   "license": "ISC",
