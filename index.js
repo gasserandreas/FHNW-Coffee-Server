@@ -1,13 +1,13 @@
 const express = require('express');
-const jwt = require('express-jwt');
+//const jwt = require('express-jwt');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //var pause = require('connect-pause');
 
-const jwtConfig = require('./config/jwt.config');
-const mongoConfig = require('./config/mongo.config');
+//const jwtConfig = require('./config/jwt.config');
+//const mongoConfig = require('./config/mongo.config');
 const User = require('./app/models/user');
 
 const app = express();
@@ -18,7 +18,7 @@ app.use(cors());
 // Authentication middleware provided by express-jwt.
 // This middleware will check incoming requests for a valid
 // JWT on any routes that it is applied to.
-const authCheck = jwt(jwtConfig);
+//const authCheck = jwt(jwtConfig);
 
 //mongoose.connect(process.env.MONGO_URL || mongoConfig.database);
 //mongoose.connect(process.env.MONGO_URL);
