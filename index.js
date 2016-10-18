@@ -1,7 +1,17 @@
-var express = require('express');
+const express = require('express');
+const jwt = require('express-jwt');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const jwtConfig = require('./config/jwt.config');
+const mongoConfig = require('./config/mongo.config');
+const User = require('./app/models/user');
+
 var app = express();
 
 const port = process.env.PORT || 5000;        // set our port
+const env = process.env.ENV || 'prod'; 
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -19,4 +29,6 @@ router.get('/', function(req, res) {
 
 app.use('/api/v1', router);
 
-app.listen(port, function() { console.log('listening on port: ' + ${port})});
+if (env !== 'prod') {
+  app.listen(port, function() { console.log('listening on port: ' + port)});
+}
