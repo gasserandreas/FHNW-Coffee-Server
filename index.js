@@ -39,8 +39,6 @@ router.get('/', function(req, res) {
 // count up/down coffee counter
 router.route('/users/:user_id/countUpCoffee')
   .post(function(req, res) {
-    res.json({ message: 'post: /users/:user_id/countUpCoffee'});
-    /*
     User.findById(req.params.user_id, function(err, user) {
       if(err) {
         res.send(err);
@@ -57,13 +55,10 @@ router.route('/users/:user_id/countUpCoffee')
         res.json(user.toObject({ getters: true }));
       });
     });
-    */
   });
 
 router.route('/users/:user_id/countDownCoffee')
   .post(function(req, res) {
-    res.json({ message: 'post: /users/:user_id/countDownCoffee'});
-    /*
     User.findById(req.params.user_id, function(err, user) {
       if(err) {
         res.send(err);
@@ -80,7 +75,6 @@ router.route('/users/:user_id/countDownCoffee')
         res.json(user.toObject({ getters: true }));
       });
     });
-    */
   });
 
 // REST API calls
@@ -88,8 +82,6 @@ router.route('/users')
 
   // create a user (accessed at POST http://localhost:8080/api/v1/users)
   .post(function(req, res) {
-    res.json({ message: 'post: /users'});
-    /*
     var user = new User();
     user.coffeeCounter = 0;
     user.lastname = req.body.lastname;
@@ -102,24 +94,15 @@ router.route('/users')
         }
         res.json(user.toObject({ getters: true }));
     });
-    */
   })
 
   // get all the bears (accessed at GET http://localhost:8080/api/v1/users)
   .get(function(req, res) {
-    //res.json({ message: 'get: /users'});
     User.find(function(err, users) {
       if (err) {
         res.send(err);
       }
       const objs = users.map(user => user.toObject({ getters: true }));
-      /*
-      const objs = [];
-      users.forEach(function(user) {
-        const obj = user.toObject({ getters: true });
-        objs.push(obj);
-      });
-      */
       res.json(objs);
     });
   });
@@ -128,19 +111,16 @@ router.route('/users/:user_id')
 
   .get(function(req, res) {
     res.json({ message: 'get: /users/:user_id'});
-    /*
     User.findById(req.params.user_id, function(err, user) {
       if(err) {
         res.send(err);
       }
       res.json(user.toObject({ getters: true }));
     });
-    */
   })
 
   .put(function(req, res) {
     res.json({ message: 'put: /users/:user_id'});
-    /*
     User.findById(req.params.user_id, function(err, user) {
       if(err) {
         res.send(err);
@@ -158,12 +138,10 @@ router.route('/users/:user_id')
         res.json(user.toObject({ getters: true }));
       });
     });
-    */
   })
 
   .delete(function(req, res) {
     res.json({ message: 'delete: /users/:user_id'});
-    /*
     const user_id = req.params.user_id;
     User.remove({
       _id: user_id
@@ -173,7 +151,6 @@ router.route('/users/:user_id')
       }
       res.json(user_id);
     });
-    */
   });
 
 app.use('/api/v1', router);
