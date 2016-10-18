@@ -113,6 +113,13 @@ router.route('/users')
         res.send(err);
       }
       const objs = users.map(user => user.toObject({ getters: true }));
+      /*
+      const objs = [];
+      users.forEach(function(user) {
+        const obj = user.toObject({ getters: true });
+        objs.push(obj);
+      });
+      */
       res.json(objs);
     });
   });
