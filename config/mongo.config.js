@@ -1,6 +1,6 @@
 module.exports = {
     'secret': 'ilovescotchyscotch',
-    'database': 'mongodb://localhost:3030/fhnw-coffee',
+    'database': 'mongodb://fhnw-coffee-server:7eb2f21fb5d59892aff84ade6d91a2e4@dokku-mongo-fhnw-coffee-server:27017/fhnw-coffee-server',
 };
 
 // connect to mongodb
