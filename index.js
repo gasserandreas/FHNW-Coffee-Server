@@ -4,18 +4,17 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-//const jwtConfig = require('./config/jwt.config');
-const mongoConfig = require('./config/mongo.config');
 const User = require('./app/models/user');
 
 var app = express();
 
-// mongodb
-mongoose.connect(process.env.MONGO_URL || mongoConfig.database);
-
 // basic configuration
-const port = process.env.PORT || 5000;        // set our port
-const env = process.env.ENV || 'prod'; 
+const mongoURL = process.env.MONGO_URL;
+const port = process.env.PORT;        // set our port
+const env = process.env.ENV;
+
+// mongodb
+mongoose.connect(mongoURL);
 
 // server config
 app.use(cors());
