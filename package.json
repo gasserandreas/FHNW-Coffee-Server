@@ -1,13 +1,14 @@
 {
-  "name": "minimal-express-app",
-  "version": "1.0.0",
+  "name": "fhnw-coffee-server",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "ENV='dev' PORT='3001' MONGO_URL='mongodb://localhost:3030/fhnw-coffee' node index.js",
     "db": "mongod --dbpath /usr/local/var/mongodb --port 3030",
-    "push:prod": "git push prod  feature/#4/dokku-deployment:master"
+    "push:prod": "git push prod  develop:master",
+    "push:dev": "git push prod  feature/#11/improve-backend:master"
   },
   "author": "",
   "license": "ISC",
