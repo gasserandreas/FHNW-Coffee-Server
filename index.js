@@ -19,4 +19,4 @@ router.get('/', function(req, res) {
 
 app.use('/api/v1', router);
 
-app.listen(port, function() { console.log(`listening on port ${port}`)});
+app.listen(port, function() { console.log('listening on port: ' + ${port})});
