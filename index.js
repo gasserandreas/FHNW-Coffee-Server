@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const jwtConfig = require('./config/jwt.config');
-const mongoConfig = require('./config/mongo.config');
+//const jwtConfig = require('./config/jwt.config');
+//const mongoConfig = require('./config/mongo.config');
 const User = require('./app/models/user');
 
 var app = express();
@@ -19,7 +19,7 @@ const router = express.Router();              // get an instance of the express 
 
 // middleware to use for all requests
 router.use(function(req, res, next) {
-    console.log('middleware');
+//  console.log('middleware');
     next();
 });
 
