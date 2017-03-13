@@ -4,15 +4,11 @@ var Schema = mongoose.Schema;
 
 // set up a mongoose model and pass it using module.exports
  
-const userSchema = new Schema({
-    firstname: String,
+const coffeeTypeSchema = new Schema({
     name: String,
-    imageName: String,
-    coffees: [{
-    	key: String,
-    	value: String,
-	}],
+    color: String,
+    coffee_id: String,
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('CoffeeType', coffeeTypeSchema);
 
