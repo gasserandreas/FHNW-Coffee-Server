@@ -77,12 +77,10 @@ router.route('/users/:user_id/countUpCoffee/:coffee_id')
           "key": coffee_id,
           "value": 1,
         };
+        user.coffees.push(coffee);
       } else {
         coffee.value = parseInt(coffee.value) + 1; // count up
       }
-
-      // manipulate array
-      user.coffees[coffee_id] = coffee;
 
       // save the user
       user.save(function(err) {
@@ -119,12 +117,10 @@ router.route('/users/:user_id/countDownCoffee/:coffee_id')
           "key": coffee_id,
           "value": 0,
         };
-      } else {
+        user.coffees.push(coffee);
+      } else if (coffee.value > 0) {
         coffee.value = parseInt(coffee.value) - 1; // count down
       }
-
-      // manipulate array
-      user.coffees[coffee_id] = coffee;
 
       // save the user
       user.save(function(err) {
