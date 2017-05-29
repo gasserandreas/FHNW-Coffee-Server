@@ -2,10 +2,10 @@ const express = require('express');
 const jwt = require('express-jwt');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const User = require('./app/models/user');
-// const CoffeeType = require('./app/models/coffeeType');
+const User = require('./app/models/user');
+const CoffeeType = require('./app/models/coffeeType');
 
 var app = express();
 
@@ -15,7 +15,7 @@ const port = process.env.PORT;        // set our port
 const env = process.env.ENV;
 
 // mongodb
-// mongoose.connect(mongoURL);
+mongoose.connect(mongoURL);
 
 // server config
 app.use(cors());
@@ -34,7 +34,6 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api! :D' });
 });
 
-/*
 // more routes for our API will happen here
 router.route('/admin/deleteAll')
   .post(function(req, res) {
@@ -285,7 +284,7 @@ router.route('/coffees/:coffees_id')
       res.json(coffees_id);
     });
   });
-*/
+
 app.use('/api/v1', router);
 app.use('/images/', express.static(__dirname + '/images'));
 
