@@ -8,6 +8,10 @@ const coffeeTypeSchema = new Schema({
     name: String,
     color: String,
     coffee_id: String,
+    updated: String,
+},
+{
+	timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
 
 module.exports = mongoose.model('CoffeeType', coffeeTypeSchema);

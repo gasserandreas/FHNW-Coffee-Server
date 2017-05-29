@@ -8,7 +8,7 @@
     "dev": "ENV='dev' PORT='3001' MONGO_URL='mongodb://localhost:3030/fhnw-coffee-ws6' node index.js",
     "db": "mongod --dbpath /usr/local/var/mongodb --port 3030",
     "push:prod": "git push prod master",
-    "push:dev": "git push prod feature/#11/improve-backend:master"
+    "push:dev": "git push prod develop:master"
   },
   "author": "",
   "license": "ISC",
